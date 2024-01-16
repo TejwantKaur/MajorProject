@@ -1,0 +1,69 @@
+
+/* Navbar */
+.navbar{
+    background-color: white !important;
+    height: 5rem;
+}
+.fa-compass{
+    color: #ff385c;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.navbar-brand {
+    display: flex;
+    margin-left: 1rem;
+}
+.navbar-brand span{
+    align-items: center;
+    margin-left: 0.25rem;
+}
+
+/* Footer */
+.f-info{
+    height: 9rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222; 
+    margin: 0.25rem;
+}
+
+.f-info-links, 
+.f-info-socials, 
+.f-info-brand{
+    /* height: 3rem; */
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i{
+    margin: 0.25rem;
+    font-size: 1.25rem;
+}
+
+.f-info-links a:hover,
+.f-info-socials i:hover{
+    color: #ff385c;
+}
+
+
+.card-text-price{
+    height: 1.65rem;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+.night{
+    /* background-color: aquamarine; */
+    align-self: start;
+    margin-left: 0.25rem;
+}
+
