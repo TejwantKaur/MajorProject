@@ -1,33 +1,35 @@
 <% layout("/layouts/boilerplate") %>
-<body>
+<br> 
     <h2>All Listings</h2>
 
     <!-- <form method="GET" action="/listings/new">
         <button>Create New Listing</button>
     </form> -->
     
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
     <% for(listing of allListings) { %>
-    <div class="card" style="width: 18rem;">
-        <img src="<%= listing.image %>" class="card-img-top" alt="img">
-        <div class="card-body">
-            <p class="card-text" >
-                <b><%= listing.title.toUpperCase() %></b> <br>
-                <%= listing.description%> <br>
-                <span class="card-text-price">
-                    <span>&#8377;<%= listing.price.toLocaleString("en-IN") %></span>
-                    <span class="night"> / night</span>
-                </span>
-                
-            </p> 
-        </div>
-    </div>
-    <br><br>
+        <a href="/listings/<%= listing.id %>"
+            class="listing-click">
+            <div class="card col">
+                <img src="<%= listing.image %>" 
+                    class="card-img-top" 
+                    alt="img"
+                    style="height:20rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text" >
+                        <b><%= listing.title.toUpperCase() %></b> 
+                        <br>
+                        <%= listing.description%> 
+                        <br>
+                        <span class="card-text-price">
+                            <span>&#8377;<%= listing.price.toLocaleString("en-IN") %></span>
+                            <span class="night"> / night</span>
+                        </span>   
+                    </p> 
+                </div>
+            </div>
+        </a>
     <% } %>
-<!-- 
-    <ul>
-        <% for(listing of allListings) { %>
-        <li> <a href="/listings/<%= listing._id %>"><%= listing.title %></a> </li>
-        <% } %>
-    </ul> -->
+</div>
 
-</body>
