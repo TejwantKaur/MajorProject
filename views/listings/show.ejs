@@ -2,13 +2,15 @@
 <div class="row">
     <div class="col-6 offset-3">
         <br>
-    <h3>Listing Details: </h3>
+
+    <h3><%= listing.title %></h3>
+
     <div class="card">
         <img src="<%=listing.image %>" alt="listing-img"
             class="card-img-top show-img">
             <div class="card-body">
                 <p class="card-text">
-                    <b><%= listing.title %></b> <br>
+                    <br>
                     &#8377;<%= listing.price.toLocaleString("en-IN") %> <br>
                     <%= listing.location %> <br>
                     <%= listing.country %> <br>
@@ -25,11 +27,57 @@
             <button id="deleteForm" 
                 onclick="return confirmDelete()"
                 class="btn btn-dark offset-5">Delete</button>
-        </form>
-        
+        </form>   
     </div>
     <br><br>
-    
+
+    <div class="col-12 mb-3">
+        <hr>
+        <h4>Leave Review</h4>
+
+        <form action="/listings/<%=listing.id%>/reviews"
+            method="POST"
+            novalidate
+            class="needs-validation">
+
+            <div class="mb-3 mt-3">
+                <label for="rating" class="form-label">Rating</label>
+                <input type="range"
+                    min="1"
+                    max="5"
+                    id="rating"
+                    name="review[rating]"
+                    class="form-range">
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label for="comment" class="form-label">Comments</label>
+                <textarea name="review[comment]"
+                    id="comment" 
+                    cols="30" 
+                    rows="4"
+                    class="form-control"
+                    placeholder="Leave Comments!!"
+                    required
+                ></textarea>
+                <div class="invalid-feedback"
+                    >Please Leave Reviews
+                </div>
+            </div>
+            <button class="btn btn-outline-dark">Submit</button>
+        </form>
+        <hr>
+        <h4>All Reviews</h4>
+        <ul>
+            <p><%= listing.reviews %></p>
+            
+            <% for(review of listing.reviews) { %>
+                <li><%= review.comment %>
+                    <%= review.rating %> Stars
+                </li>
+            <% } %>
+        </ul>
+    </div>
 </div>
 </div>
 
