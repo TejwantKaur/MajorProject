@@ -42,7 +42,7 @@ const sessionOptions = {
     },
 };
 
-app.get("/", (req,res)=>{
+app.get("/", (req,res) => {
     res.send("Hi i am root");
 }); 
 
