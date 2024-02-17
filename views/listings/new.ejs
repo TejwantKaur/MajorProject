@@ -31,7 +31,8 @@
                     placeholder="Enter description" 
                     required
                     id="description"
-                    class="form-control"></textarea> 
+                    class="form-control"
+                    ></textarea> 
                     <div class="invalid-feedback">Enter Short Description</div>
             </div>
             
@@ -50,10 +51,11 @@
                     <label for="price" class="form_label">Price</label>
                     <input name="listing[price]"
                         placeholder="1200"
-                        
+                        type="number"
                         required
                         class="form-control"
                         id="price"
+                        value="1200"
                     />
                     <div class="invalid-feedback">Cannot leave Empty</div> 
                 </div>
@@ -67,6 +69,7 @@
                         required
                         class="form-control"
                         id="country"
+                        value="India"
                     /> 
                     <div class="invalid-feedback">Cannot Leave Empty</div>
                 </div>

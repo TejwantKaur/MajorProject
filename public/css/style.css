@@ -74,7 +74,7 @@ body{
     margin-left: 0.25rem;
 }
 
-.card{
+.listing-card{
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -126,3 +126,4 @@ body{
     display: inline !important;
     height: 2.40rem !important;
 }
+
