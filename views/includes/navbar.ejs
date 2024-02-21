@@ -1,4 +1,6 @@
+<!-- navbar -->
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <!-- container -->
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <i class="fa-regular fa-compass"></i>
@@ -11,10 +13,24 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- options -->
             <div class="navbar-nav">
                 <a class="nav-link" href="/">Home</a>
                 <a class="nav-link" href="/listings">All Listings</a>
                 <a class="nav-link" href="/listings/new">Create New Listing</a>
+            </div>
+
+            <!-- login options -->
+            <div class="navbar-nav ms-auto">
+                <!-- login -->
+                <% if(!currUser) { %>
+                    <a class="nav-link" href="/signup">Sign In</a>
+                    <a class="nav-link" href="/login">Log In</a>
+                <% } %>
+                <!-- logout -->
+                <% if(currUser) { %>
+                    <a class="nav-link" href="/logout">Log Out</a>
+                <% } %>
             </div>
         </div>
     </div>
