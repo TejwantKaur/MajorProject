@@ -37,10 +37,10 @@ router
     );
 
 router
-.get("/:id/edit",
-    isLoggedIn,
-    isOwner,
-    wrapAsync(lisitngController.renderEditForm)
-);
+    .get("/:id/edit",
+        isLoggedIn,
+        isOwner,
+        wrapAsync(lisitngController.renderEditForm)
+    );
 
 module.exports = router;
