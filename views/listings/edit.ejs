@@ -1,90 +1,99 @@
 <% layout("/layouts/boilerplate") %>
 <div class="row">
-    <div class="col-8 offset-2">
-    <br>
+  <div class="col-8 offset-2">
+    <br />
     <h3>Edit Listing</h3>
 
-    <form method="POST" 
-        action="/listings/<%= listing._id %>?_method=PUT"
-        novalidate
-        class="needs-validation"
+    <form
+      method="POST"
+      action="/listings/<%= listing._id %>?_method=PUT"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label for="title" class="form_label">Title</label>
+        <input
+          name="listing[title]"
+          value="<%= listing.title %>"
+          type="text"
+          class="form-control"
+          id="title"
+          required
+        />
+        <div class="invalid-feedback">Cannot leave Empty</div>
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form_label">Description</label>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          id="description"
+          required
         >
-        <div class="mb-3">
-            <label for="title" class="form_label">Title</label>
-            <input name="listing[title]" 
-                value="<%= listing.title %>" 
-                type="text"
-                class="form-control"
-                id="title"
-                required
-            />
-            <div class="invalid-feedback">Cannot leave Empty</div>
-            <div class="valid-feedback">Looks Good!</div>
-        </div>
-        
-        <div class="mb-3">
-            <label for="description" class="form_label">Description</label>
-            <textarea name="listing[description]" 
-                class="form-control"
-                id="description"
-                required
-            ><%= listing.description %></textarea>
-            <div class="invalid-feedback">Provide Some Description</div>
+<%= listing.description %></textarea
+        >
+        <div class="invalid-feedback">Provide Some Description</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form_label">Image</label>
+        <input
+          name="listing[image]"
+          type="text"
+          value="<%= listing.image %>"
+          class="form-control"
+          id="image"
+          required
+        />
+        <div class="invalid-feedback">Cannot leave Empty</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form_label">Price</label>
+          <input
+            name="listing[price]"
+            type="number"
+            value="<%= listing.price %>"
+            id="price"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Cannot leave Empty</div>
         </div>
 
-        <div class="mb-3">
-            <label for="image" class="form_label">Image</label>
-            <input name="listing[image]" 
-                type="text"
-                value="<%= listing.image %>"
-                class="form-control"
-                id="image"
-                required
-            />
-            <div class="invalid-feedback">Cannot leave Empty</div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form_label">Country</label>
+          <input
+            name="listing[country]"
+            type="text"
+            value="<%= listing.country %>"
+            id="country"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Cannot leave Empty</div>
         </div>
+      </div>
 
-        <div class="row">
-            <div class="mb-3 col-md-4">
-                <label for="price" class="form_label">Price</label>
-                <input name="listing[price]"
-                    type="number"
-                    value="<%= listing.price %>"
-                    id="price"
-                    class="form-control"
-                    required
-                />
-                <div class="invalid-feedback">Cannot leave Empty</div>
-            </div>
-    
-            <div class="mb-3 col-md-8">
-                <label for="country" class="form_label">Country</label>
-                <input name="listing[country]"
-                    type="text"
-                    value="<%= listing.country %>"
-                    id="country"
-                    class="form-control"
-                    required
-                />
-                <div class="invalid-feedback">Cannot leave Empty</div>
-            </div>
-        </div>
-        
-        <div class="mb-3">
-            <label for="location" class="form_label">Location</label>
-            <input type="text"
-                name="listing[location]" 
-                value="<%= listing.location %>"
-                id="location"
-                class="form-control"
-                required
-            />
-            <div class="invalid-feedback">Cannot leave Empty</div>
-        </div>
-        <br>
+      <div class="mb-3">
+        <label for="location" class="form_label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          value="<%= listing.location %>"
+          id="location"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Cannot leave Empty</div>
+      </div>
+      <br />
 
-        <button class="btn btn-dark edit-btn">Edit</button>
-        <br><br><br>
+      <button class="btn btn-dark edit-btn">Edit</button>
+      <br /><br /><br />
     </form>
-</div>
+  </div>
 </div>

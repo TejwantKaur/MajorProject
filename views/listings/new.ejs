@@ -1,94 +1,101 @@
 <% layout("/layouts/boilerplate") %>
 <div class="row">
-    <div class="col-8 offset-2">
-        <br>
-        <h3>Create New Listing</h3>
+  <div class="col-8 offset-2">
+    <br />
+    <h3>Create New Listing</h3>
 
-        <form method="POST" 
-            action="/listings"
-            novalidate 
-            class="needs-validation">
+    <form method="POST" 
+        action="/listings" 
+        novalidate 
+        class="needs-validation"
+        enctype="multipart/form-data"
+        >
+      <div class="mb-3">
+        <label for="title" class="form_label"> Title </label>
+        <input
+          name="listing[title]"
+          placeholder="Enter Title"
+          type="text"
+          required
+          id="title"
+          class="form-control"
+        />
+        <div class="invalid-feedback">Cannot leave Empty</div>
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
 
-            <div class="mb-3">
-                <label for="title"
-                    class="form_label">
-                    Title
-                </label>
-                <input name="listing[title]"
-                    placeholder="Enter Title" 
-                    type="text"
-                    required
-                    id="title"
-                    class="form-control"
-                />
-                <div class="invalid-feedback">Cannot leave Empty</div>
-                <div class="valid-feedback">Looks Good!</div>
-            </div>
+      <div class="mb-3">
+        <label for="description" class="form_label">Description</label>
+        <textarea
+          name="listing[description]"
+          placeholder="Enter description"
+          required
+          id="description"
+          class="form-control"
+        ></textarea>
+        <div class="invalid-feedback">Enter Short Description</div>
+      </div>
 
-            <div class="mb-3">
-                <label for="description" class="form_label">Description</label>
-                <textarea name="listing[description]"
-                    placeholder="Enter description" 
-                    required
-                    id="description"
-                    class="form-control"
-                    ></textarea> 
-                    <div class="invalid-feedback">Enter Short Description</div>
-            </div>
-            
-            <div class="mb-3">
-                <label for="image" class="form_label">Image Label</label>
-                <input name="listing[image]" 
-                    placeholder="Enter img URL/link"
-                    type="text"
-                    class="form-control"
-                    id="image"
-                />
-            </div>
-            
-            <div class="row">
-                <div class="mb-3 col-md-4">
-                    <label for="price" class="form_label">Price</label>
-                    <input name="listing[price]"
-                        placeholder="1200"
-                        type="number"
-                        required
-                        class="form-control"
-                        id="price"
-                        value="1200"
-                    />
-                    <div class="invalid-feedback">Cannot leave Empty</div> 
-                </div>
-                
-                
-                <div class="mb-3 col-md-8">
-                    <label for="country" class="form_label">Country</label>
-                    <input name="listing[country]" 
-                        placeholder="India"
-                        type="text"
-                        required
-                        class="form-control"
-                        id="country"
-                        value="India"
-                    /> 
-                    <div class="invalid-feedback">Cannot Leave Empty</div>
-                </div>
-            </div>
-            
-            <div class="mb-3">
-                <label for="location" class="form_label">Location</label>
-                <input name="listing[location]" 
-                    placeholder="Enter Location"
-                    type="text"
-                    required
-                    class="form-control"
-                    id="location"
-                />
-                <div class="invalid-feedback">Cannot leave Empty</div>
-            </div>
-        <br>
-            <button class="btn btn-dark add-btn">Add</button>
-            <br><br><br>
-        </form>
-    </div>
+      <div class="mb-3">
+        <!-- <label for="image" class="form_label">Image Label</label> -->
+        <label for="image" 
+          class="form_label"
+          >Upload Listing Image
+        </label>
+        <input
+          name="listing[image]"
+          placeholder="Enter img URL/link"
+          type="file"
+          class="form-control"
+          id="image"
+        />
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form_label">Price</label>
+          <input
+            name="listing[price]"
+            placeholder="1200"
+            type="number"
+            required
+            class="form-control"
+            id="price"
+            value="1200"
+          />
+          <div class="invalid-feedback">Cannot leave Empty</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form_label">Country</label>
+          <input
+            name="listing[country]"
+            placeholder="India"
+            type="text"
+            required
+            class="form-control"
+            id="country"
+            value="India"
+          />
+          <div class="invalid-feedback">Cannot Leave Empty</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form_label">Location</label>
+        <input
+          name="listing[location]"
+          placeholder="Enter Location"
+          type="text"
+          required
+          class="form-control"
+          id="location"
+        />
+        <div class="invalid-feedback">Cannot leave Empty</div>
+      </div>
+      <br />
+      <button class="btn btn-dark add-btn">Add</button>
+      <br /><br /><br />
+    </form>
+  </div>
 </div>
