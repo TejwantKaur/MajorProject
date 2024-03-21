@@ -7,19 +7,22 @@ const Listing = require("../models/listings.js");
 const lisitngController = require("../controllers/listing.js");
 
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" })
+
+const { storage } = require("../cloudConfig.js");
+const upload = multer({ storage })
 
 router
     .route("/")
     .get(wrapAsync(lisitngController.index))
-    // .post(
-    //     isLoggedIn,
-    //     validateListing,
-    //     wrapAsync(lisitngController.createListing)
-    // );
-    .post(upload.single('listing[image]'),(req,res)=>{
-        res.send(req.file);
-    });
+    .post(
+        isLoggedIn,
+        upload.single('listing[image]'),
+        validateListing,
+        wrapAsync(lisitngController.createListing)
+    );
+    // .post(upload.single('listing[image]'),(req,res)=>{
+    //     res.send(req.file);
+    // });
 
 // new route
 router.get("/new", 
